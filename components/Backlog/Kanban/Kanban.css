@@ -1,0 +1,34 @@
+.kanban-column {
+  height: 110%;
+  padding: 3%;
+  border-radius: 20px; /*make it more curvy?*/
+  font-size: 20px;
+}
+
+.todo {
+  background-color: #e0e1dd;
+  color: black;
+  font-size: 20px;
+}
+
+.complete {
+  background-color: #0d1b2a;
+  color: white;
+  font-size: 20px;
+}
+
+.prog {
+  background-color: #415a77;
+  color: white;
+  font-size: 20px;
+}
+
+.card.kanban-task:hover {
+  filter: brightness(95%);
+}
+
+.kanban-column-container {
+  overflow: auto;
+  height: 100%;
+  font-size: 20px;
+}

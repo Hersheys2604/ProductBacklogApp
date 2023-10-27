@@ -1,0 +1,32 @@
+.box {
+  /*creating a box for the tasks to be able to choose*/
+  width: 200px;
+  height: 150px;
+  border: 2px solid #333;
+  padding: 15px;
+  margin: 15px;
+  background-color: transparent;
+  box-shadow: inset 0 0 7px #31312e;
+}
+main {
+  padding-left: 0;
+}
+
+/* Increase font size for goal, start date, and end date */
+.sprint-details p {
+  font-size: 28px; /* You can adjust the font size as needed */
+}
+
+/* Increase font size for the "no sprints here" message */
+div h1 {
+  font-size: 64px; /* You can adjust the font size as needed */
+}
+
+div p {
+  font-size: 28px; /* You can adjust the font size as needed */
+}
+
+/* Increase font size for the "+ Create New Sprint" button */
+.button {
+  font-size: 28px; /* You can adjust the font size as needed */
+}

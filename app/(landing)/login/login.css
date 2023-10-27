@@ -1,0 +1,81 @@
+.login-form {
+  max-width: 300px;
+  margin: 0 auto;
+  position: absolute;
+  top: 35%;
+  left: 10%;
+}
+.brand_name {
+  margin: 0 auto;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+}
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: white;
+  font-size: 25px;
+  width: 120%;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 150%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.login-button {
+  display: block;
+  font-weight: bold;
+  width: 150%;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+body {
+  background-image: url("../background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: rgb(1, 1, 46);
+}
+
+.register-button {
+  display: block;
+  font-weight: bold;
+  width: 150%;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.register-button:hover {
+  background-color: #0070f3;
+  color: #fff;
+}

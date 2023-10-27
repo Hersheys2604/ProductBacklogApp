@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+
+
+model User {
+  id             Int      @id @default(sequence())
+  first_name     String
+  last_name      String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  email          String   @unique
+  password       String
+  role           Role
+  tasks_assigned Task[] @relation("TaskToUser")
+  user_stories   UserStory[]  @relation("UserToUserStory")
+}
+
+model Task {
+  id          Int          @id @default(sequence())
+  name        String
+  type        TaskType
+  storyPoints Int
+  priority    TaskPriority
+  description String
+  status      TaskStatus
+  stage       TaskStage
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  sprint      Sprint[]     @relation("SprintToTask")
+  tags        Tag[]        @relation("TagToTask")
+  assigned_to User[]       @relation("TaskToUser")
+}
+
+model Tag {
+  id        Int      @id @default(sequence())
+  name      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tasks     Task[]   @relation("TagToTask")
+}
+
+model UserStory {
+  id          Int      @id @default(sequence())
+  name        String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  assignedTo  User[]   @relation("UserToUserStory")
+}
+
+model Sprint {
+  id        Int          @id @default(sequence())
+  goal      String
+  status    SprintStatus
+  startDate DateTime
+  endDate   DateTime
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  tasks     Task[]       @relation("SprintToTask")
+}
+
+enum TaskType {
+  STORY
+  BUG
+}
+
+enum TaskPriority {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum TaskStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+}
+
+enum TaskStage {
+  PLANNING
+  IN_DEVELOPMENT
+  TESTING
+}
+
+enum Role {
+  ADMIN
+  BASIC
+}
+
+enum SprintStatus {
+  PAST
+  CURRENT
+  FUTURE
+}
